@@ -68,3 +68,54 @@ export const Error = styled.span`
     margin-top: 8px;
     text-align: center;
 `;
+
+export const Characters = styled.section`
+    margin-top: 80px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+`;
+
+export const CharacterCard = styled.div`
+    display: grid;
+    transition: 0.2s;
+    /* background-color: #e6eaea; */
+    background: url('http://placehold.it/240x260/000000?text=Personagem%20sem%20imagem%27');
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    img {
+        height: 220px;
+    }
+
+    span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 50px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 30px;
+
+        background-color: #ccf0f7;
+
+        text-decoration: none;
+        color: #3a3a3a;
+        font-weight: 600;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: #d3da4d;
+        }
+    }
+`;

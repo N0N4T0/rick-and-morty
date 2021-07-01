@@ -11,7 +11,7 @@ export default createGlobalStyle`
     }
 
     body {
-        background: #F0f0f5 url(${rickAndMortyBackground}) no-repeat;
+        background: #010101 url(${rickAndMortyBackground}) no-repeat;
         background-size: cover;
         -webkit-font-smoothing: antialiased;
         background-position-y: center;

@@ -3,10 +3,11 @@ import React, { useState, FormEvent } from 'react';
 import logoImg from '../../assets/logo.svg';
 import api from '../../services/api';
 
-import { Img, Form, Title, Error } from './styles';
+import { Img, Form, Title, Error, Characters, CharacterCard } from './styles';
 
 interface Character {
     results: {
+        id: number;
         name: string;
         image: string;
         gender: string;
@@ -18,14 +19,6 @@ const Dashboard: React.FC = () => {
     const [inputError, setInputError] = useState('');
 
     const [characters, setCharacters] = useState<Character[]>(() => {
-        const storagedCharacters = localStorage.getItem(
-            '@RickAndMorty:characters',
-        );
-
-        if (storagedCharacters) {
-            return JSON.parse(storagedCharacters);
-        }
-
         return [];
     });
 
@@ -74,6 +67,22 @@ const Dashboard: React.FC = () => {
             </Form>
 
             {inputError && <Error>{inputError}</Error>}
+
+            <Characters>
+                {characters.map(character => (
+                    <CharacterCard key={character.results.id}>
+                        <img
+                            src={character.results.image}
+                            alt={character.results.name}
+                        />
+                        <span>
+                            <h3>{character.results.name}</h3>
+                            <p>{character.results.gender}</p>
+                        </span>
+                        <a href="www.g">Adcionar favorito</a>
+                    </CharacterCard>
+                ))}
+            </Characters>
         </>
     );
 };
