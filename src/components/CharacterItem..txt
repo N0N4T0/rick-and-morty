@@ -1,0 +1,35 @@
+// import React, { useState, ButtonHTMLAttributes } from 'react';
+
+// interface Character {
+//     name: string;
+//     image: string;
+//     gender: string;
+// }
+
+// const CharacterItem: React.FC = ({ children, props }) => {
+//     const [favoritesChars, setFavoritesChars] = useState<Character[]>([]);
+
+//     function handleAddToFavoriteCharacters(
+//         event: ButtonHTMLAttributes<HTMLButtonElement>,
+//     ): void {
+//         const newFavoriteChar = event;
+//         setFavoritesChars({ ...favoritesChars, newFavoriteChar });
+//     }
+
+//     return (
+//         <div>
+//             <img src={props.chars.image} alt={props.chars.name} />
+//             <span>
+//                 <h3>{props.chars.name}</h3>
+//                 <p>{props.chars.gender}</p>
+//             </span>
+//             <button
+//                 value={props.chars.id}
+//                 onClick={e => handleAddToFavoriteCharacters(e.target.value)}
+//             >
+//                 Adcionar a favorito
+//             </button>
+//         </div>
+//     );
+// };
+// export default CharacterItem;

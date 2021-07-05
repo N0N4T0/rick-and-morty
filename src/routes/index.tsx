@@ -2,14 +2,11 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
-import Dashboard from '../pages/Dashboard';
-import Character from '../pages/Character';
+import CharacterList from '../components/CharacterList';
 
 const Routes: React.FC = () => (
     <Switch>
-        <Route path="/" exact component={Dashboard} />;
-        <Route path="/characters/:character+" component={Character} />
-        {/* <Route path="/characters" component={Character} /> */}
+        <Route path="/" exact component={CharacterList} />;
     </Switch>
 );
 

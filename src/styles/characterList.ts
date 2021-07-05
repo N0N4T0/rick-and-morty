@@ -1,22 +1,36 @@
 import styled, { css } from 'styled-components';
-import { shade } from 'polished';
+import { shade, darken } from 'polished';
 
 interface FormProps {
     hasError: boolean;
 }
+
+export const Header = styled.header`
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+
+    img {
+        width: 36%;
+    }
+
+    a {
+        display: inline-flex;
+        align-self: center;
+        text-align: center;
+        text-decoration: none;
+        align-items: center;
+        color: #d3da4d;
+    }
+`;
 
 export const Title = styled.h1`
     font-size: 38px;
     color: #fff;
     max-width: 480px;
     line-height: 39px;
-
     margin: 0 auto;
     margin-top: 150px;
-`;
-
-export const Img = styled.img`
-    width: 36%;
 `;
 
 export const Form = styled.form<FormProps>`
@@ -71,51 +85,48 @@ export const Error = styled.span`
 
 export const Characters = styled.section`
     margin-top: 80px;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-`;
-
-export const CharacterCard = styled.div`
-    display: grid;
-    transition: 0.2s;
-    /* background-color: #e6eaea; */
-    background: url('http://placehold.it/240x260/000000?text=Personagem%20sem%20imagem%27');
-
-    &:hover {
-        transform: translateY(-5px);
-    }
-
-    img {
-        height: 220px;
-    }
-
-    span {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        height: 50px;
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        height: 30px;
-
-        background-color: #ccf0f7;
-
-        text-decoration: none;
-        color: #3a3a3a;
-        font-weight: 600;
+    div {
+        display: grid;
         transition: 0.2s;
-
+        background: url('http://placehold.it/240x260/000000?text=Personagem%20sem%20imagem%27');
         &:hover {
-            background-color: #d3da4d;
+            transform: translateY(-5px);
+        }
+        img {
+            height: 220px;
+        }
+        span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #d3ef76;
+
+            height: 65px;
+            h3 {
+                text-align: center;
+                color: #3a3a3a;
+            }
+            p {
+                color: rgb(122, 110, 110);
+            }
+        }
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            background-color: #ccf0f7;
+            border: none;
+            color: #3a3a3a;
+            font-weight: 600;
+            transition: 0.2s;
+            &:hover {
+                background-color: ${darken(0.3, '#ccf0f7')};
+            }
         }
     }
 `;
